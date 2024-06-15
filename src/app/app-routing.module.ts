@@ -3,14 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsComponent } from './pages/forms/forms.component';
 import { DicasComponent } from './pages/dicas/dicas.component';
 import { SobreNosComponent } from './pages/sobre-nos/sobre-nos.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
-  { path: '', component: FormsComponent }, // Rota inicial para o FormsComponent
-  { path: 'dicas', component: DicasComponent }, // Rota para a página DicasComponent
-  { path: 'sobre-nos', component: SobreNosComponent }, // Rota para a página SobreNosComponent
+  { path: 'home', component: FormsComponent }, 
+  { path: 'dicas', component: DicasComponent }, 
+  { path: 'sobre-nos', component: SobreNosComponent }, 
+  {path: 'footer', component: FooterComponent}
 ];
 
 @NgModule({
+  declarations: [],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
