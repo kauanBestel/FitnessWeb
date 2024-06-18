@@ -8,6 +8,7 @@ import { FormsComponent } from './pages/forms/forms.component';
 import { DicasComponent } from './pages/dicas/dicas.component';
 import { SobreNosComponent } from './pages/sobre-nos/sobre-nos.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
     DicasComponent,
     SobreNosComponent,
     FooterComponent,
+    LoginComponent,
 
   ],
   imports: [
