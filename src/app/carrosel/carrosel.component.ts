@@ -3,15 +3,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-carrosel',
   templateUrl: './carrosel.component.html',
-  styleUrl: './carrosel.component.css'
+  styleUrls: ['./carrosel.component.css']
 })
 export class CarouselComponent implements OnInit {
   currentIndex: number = 0;
   totalItems!: number;
 
   ngOnInit() {
-    // Inicializa o total de itens no carrossel
-    this.totalItems = document.querySelectorAll('.gallery .sombra-container').length;
+    
+    this.totalItems = document.querySelectorAll('.gallery .container').length;
   }
 
   prevSlide() {
@@ -34,8 +34,7 @@ export class CarouselComponent implements OnInit {
 
   updateGalleryPosition() {
     const gallery = document.querySelector('.gallery') as HTMLElement;
-    const galleryWrapper = document.querySelector('.gallery-wrapper') as HTMLElement;
-    const galleryWidth = galleryWrapper.clientWidth;
-    gallery.style.transform = `translateX(-${this.currentIndex * galleryWidth}px)`;
+    const itemWidth = document.querySelector('.container')?.clientWidth || 0;
+    gallery.style.transform = `translateX(-${this.currentIndex * itemWidth}px)`;
   }
 }
