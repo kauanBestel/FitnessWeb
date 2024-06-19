@@ -1,6 +1,6 @@
-<div class="login-container">
-    <h2>Login</h2>
-    <form (ngSubmit)="onLogin()">
+<div class="register-container">
+    <h2>Register</h2>
+    <form (ngSubmit)="onRegister()">
       <div>
         <label for="email">Email</label>
         <input type="email" [(ngModel)]="email" name="email" required>
@@ -9,11 +9,12 @@
         <label for="password">Password</label>
         <input type="password" [(ngModel)]="password" name="password" required>
       </div>
-      <button type="submit">Login</button>
+      <button type="submit">Register</button>
     </form>
     <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
     <p>
-      Don't have an account? <a (click)="goToRegister()">Register</a>
+      Already have an account? <a (click)="goToLogin()">Login</a>
     </p>
   </div>
   
