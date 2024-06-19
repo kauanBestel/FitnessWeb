@@ -8,6 +8,14 @@
     background-color: white;
   }
   
+  .gallery {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
+    transition: transform 0.5s ease-in-out; /* Adicione esta linha */
+  }
+  
+  
   h1 {
     text-align: center;
     margin: 1em 0;

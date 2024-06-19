@@ -1,43 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-carrosel',
   templateUrl: './carrosel.component.html',
   styleUrl: './carrosel.component.css'
 })
-export class CarroselComponent {
-  // const controls = document.querySelectorAll(".control");
-// let currentItem = 0;
-// const items = document.querySelectorAll(".item");
-// const maxItems = items.length;
+export class CarouselComponent implements OnInit {
+  currentIndex: number = 0;
+  totalItems!: number;
 
-// controls.forEach((control) => {
-//   control.addEventListener("click", (e) => {
-//     isLeft = e.target.classList.contains("arrow-left");
+  ngOnInit() {
+    // Inicializa o total de itens no carrossel
+    this.totalItems = document.querySelectorAll('.gallery .sombra-container').length;
+  }
 
-//     if (isLeft) {
-//       currentItem -= 1;
-//     } else {
-//       currentItem += 1;
-//     }
+  prevSlide() {
+    if (this.currentIndex === 0) {
+      this.currentIndex = this.totalItems - 1;
+    } else {
+      this.currentIndex--;
+    }
+    this.updateGalleryPosition();
+  }
 
-//     if (currentItem >= maxItems) {
-//       currentItem = 0;
-//     }
+  nextSlide() {
+    if (this.currentIndex === this.totalItems - 1) {
+      this.currentIndex = 0;
+    } else {
+      this.currentIndex++;
+    }
+    this.updateGalleryPosition();
+  }
 
-//     if (currentItem < 0) {
-//       currentItem = maxItems - 1;
-//     }
-
-//     items.forEach((item) => item.classList.remove("current-item"));
-
-//     items[currentItem].scrollIntoView({
-//       behavior: "smooth",
-//       inline: "center"
-//     });
-
-//     items[currentItem].classList.add("current-item");
-//   });
-// });
-
+  updateGalleryPosition() {
+    const gallery = document.querySelector('.gallery') as HTMLElement;
+    const galleryWrapper = document.querySelector('.gallery-wrapper') as HTMLElement;
+    const galleryWidth = galleryWrapper.clientWidth;
+    gallery.style.transform = `translateX(-${this.currentIndex * galleryWidth}px)`;
+  }
 }
