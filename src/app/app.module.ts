@@ -9,6 +9,7 @@ import { DicasComponent } from './pages/dicas/dicas.component';
 import { SobreNosComponent } from './pages/sobre-nos/sobre-nos.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+import { CarouselComponent } from './carrosel/carrosel.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { LoginComponent } from './login/login.component';
     SobreNosComponent,
     FooterComponent,
     LoginComponent,
+    CarouselComponent,
 
   ],
   imports: [
