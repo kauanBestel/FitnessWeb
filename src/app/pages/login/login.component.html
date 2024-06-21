@@ -1,0 +1,16 @@
+<div class="c1">
+  <div class="titulo-container">Login</div>
+  <div class="texto-container">
+    <form (ngSubmit)="login()">
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="email" name="email">
+      </div>
+      <div>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password">
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
