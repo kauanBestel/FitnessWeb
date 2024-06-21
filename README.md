@@ -5,4 +5,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development 
 
 developed by 
-Kauan dos Santos Bestel and Palbo Rodrigues
+Kauan dos Santos Bestel and Pablo Rodrigues
